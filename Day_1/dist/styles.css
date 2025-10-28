@@ -36,13 +36,13 @@ body {
 }
 
 .primary-button {
-  background: #4CAF4F;
+  background: #4caf4f;
   color: #fff;
 }
 
 .secondary-button {
   background: transparent;
-  color: #4CAF4F;
+  color: #4caf4f;
 }
 
 .flex-center {
@@ -86,7 +86,7 @@ body {
 
 .care-text {
   position: absolute;
-  background: #F5F7FA;
+  background: #f5f7fa;
   width: 80%;
   left: 10%;
   height: 135px;
@@ -102,6 +102,90 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 50px 0px;
+}
+
+.client {
+  height: 190px;
+  width: 80vh;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-header {
+  height: 76px;
+  width: 1110px;
+}
+
+.client-header {
+  font-size: 36px;
+  font-weight: 500;
+  row-gap: 8px;
+  justify-self: center;
+  color: #4d4d4d;
+}
+
+.client-subheader {
+  font-size: 16px;
+  color: #717171;
+  margin-top: 12px;
+  color: #717171;
+  text-align: center;
+}
+
+.client-logos {
+  width: 1152px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+
+.client-logo {
+  width: 41px;
+  height: 27px;
+}
+
+.who-we-are-section {
+  padding: 80px 0;
+  width: 80vw;
+  margin: 0 auto;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.community-header {
+  font-size: 36px;
+  font-weight: 600;
+  width: 542px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+.community-suitable {
+  height: 24px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
 }
 
 /*# sourceMappingURL=styles.css.map */
