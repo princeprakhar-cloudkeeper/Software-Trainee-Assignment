@@ -1,0 +1,27 @@
+{
+  "name": "html_css_scss",
+  "version": "1.0.0",
+  "description": "this is practice assignment for 28oct about the seesion for the html css scss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/princeprakhar.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "scss"
+  ],
+  "author": "Prakhar deep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github.com/princeprakhar/issues"
+  },
+  "homepage": "https://github.com/github.com/princeprakhar#readme",
+  "dependencies": {
+    "scss": "^0.2.4"
+  }
+}
