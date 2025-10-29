@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task - 1</title>
+</head>
+
+<body>
+  <main>
+    <form id="myForm">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name">
+      <br /><br />
+
+      <label for="age">Enter your age:</label>
+      <input type="number" id="age" name="age">
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <script>
+    const nameInput = document.getElementById('name');
+    const ageInput = document.getElementById('age');
+    const form = document.getElementById('myForm');
+
+    function validateForm() {
+      const nameValue = nameInput.value.trim();
+      const ageValue = ageInput.value.trim();
+      const ageNumber = parseInt(ageValue, 10);
+
+      if (nameValue === '') {
+        alert('Name cannot be empty.');
+        return false;
+      }
+
+      if (ageValue === '' || isNaN(ageNumber) || ageNumber <= 17) {
+        alert('Please enter age greater than 17.');
+        return false;
+      }
+
+      alert('Form submitted successfully!');
+      return true;
+    }
+
+    form.addEventListener('submit', function (event) {
+      if (!validateForm()) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+
+</html>
