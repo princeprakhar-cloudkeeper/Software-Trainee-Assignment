@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Change color of the div when mouse is moved over it and restore the color when mouse moves out of it using js -->
+    <div id= "colorBox" style="width:200px; height:200px; background-color:lightblue;" >
+            <div style="display:flex ">hover over me    </div>
+
+    </div>
+    <script>
+        const colorBox = document.getElementById("colorBox");
+        if(!colorBox){
+            console.error("Element with id 'colorBox' not found.");
+        }else{
+            console.log("Element with id 'colorBox' found.");
+        }
+
+        colorBox.addEventListener("mouseover", function() {
+            colorBox.style.backgroundColor = "lightgreen";
+        });
+        colorBox.addEventListener("mouseout", function() {
+            colorBox.style.backgroundColor = "lightblue";
+        }
+        )
+
+    </script>
+</body>
+</html>
