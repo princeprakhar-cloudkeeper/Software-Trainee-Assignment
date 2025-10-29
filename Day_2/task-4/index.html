@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-4</title>
+  </head>
+  <body>
+    <!-- Remove the first number from the array.-->
+    
+    <div id="arrayOutput" name="arrayOutput" style="margin-top: 20px"></div>
+    <label for="num">Click the Button to First Element of the Array</label>
+    
+    <button
+      onclick="handleRemoveOperation()"
+      type="submit"
+      style="width: max-content"
+    >
+      Remove First Element
+    </button>
+    
+
+    <script>
+      const existingArray = [1, 2, 3, 4, 5];
+      const outputDiv = document.getElementById("arrayOutput");
+      outputDiv.innerText = "Current Array: " + existingArray.join(", ");
+      handleRemoveOperation = () => {
+        if (existingArray.isNaN || existingArray.length === 0){
+            alert("Array is empty. Cannot remove element.");
+            return;
+        }
+        const removedElement = existingArray.shift();
+        console.log("Removed Element:", removedElement);
+        const outputDiv = document.getElementById("arrayOutput");
+        outputDiv.innerText = "Current Array: " + existingArray.join(", ");
+      };
+    </script>
+  </body>
+</html>
