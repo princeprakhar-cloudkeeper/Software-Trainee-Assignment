@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-3</title>
+  </head>
+  <body>
+    <!-- Add a number to the end of the array.
+ -->
+    
+    <div id="arrayOutput" name="arrayOutput" style="margin-top: 20px"></div>
+    <label for="num">Enter the Number which you to append</label>
+    <input type="number" id="num" name="num" />
+    <button
+      onclick="handlePushOperation()"
+      type="submit"
+      style="width: max-content"
+    >
+      Push the Element
+    </button>
+    
+
+    <script>
+      const existingArray = [1, 2, 3, 4, 5];
+      const inputField = document.getElementById("num");
+      const outputDiv = document.getElementById("arrayOutput");
+      outputDiv.innerText = "Current Array: " + existingArray.join(", ");
+      handlePushOperation = () => {
+        const newValue = parseInt(inputField.value, 10);
+        if (!isNaN(newValue)) {
+          existingArray.push(newValue);
+          console.log("Updated Array:", existingArray);
+
+          const outputDiv = document.getElementById("arrayOutput");
+          outputDiv.innerText = "Current Array: " + existingArray.join(", ");
+
+          // alert("Updated Array: " + existingArray.join(", "));
+        } else {
+          alert("Please enter a valid number.");
+        }
+      };
+    </script>
+  </body>
+</html>
