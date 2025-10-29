@@ -11,7 +11,7 @@ body {
   background: #F5F7FA;
 }
 
-.centered-container {
+.header-centered-container {
   width: 80vw;
   margin: 0 auto;
 }
@@ -36,13 +36,13 @@ body {
 }
 
 .primary-button {
-  background: #4caf4f;
+  background: #4CAF4F;
   color: #fff;
 }
 
 .secondary-button {
   background: transparent;
-  color: #4caf4f;
+  color: #4CAF4F;
 }
 
 .flex-center {
@@ -86,7 +86,7 @@ body {
 
 .care-text {
   position: absolute;
-  background: #f5f7fa;
+  background: #F5F7FA;
   width: 80%;
   left: 10%;
   height: 135px;
@@ -169,7 +169,6 @@ body {
 
 .community-header {
   font-size: 36px;
-  font-weight: 600;
   width: 542px;
   height: 88px;
   display: flex;
@@ -186,6 +185,78 @@ body {
   align-items: center;
   justify-content: center;
   color: #717171;
+}
+
+.card-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding-top: 48px;
+  justify-content: space-evenly;
+}
+
+/* Card styling */
+/* Container (if multiple cards) */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px;
+}
+
+/* Individual card */
+.card {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Icon section */
+.card-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* Image styling */
+.card-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  object-fit: contain;
+}
+
+/* Title */
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4D4D4D;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.card-desc {
+  font-size: 16px;
+  color: #666;
+  margin-top: 20px;
+  line-height: 1.5;
+  max-width: 260px;
 }
 
 /*# sourceMappingURL=styles.css.map */
