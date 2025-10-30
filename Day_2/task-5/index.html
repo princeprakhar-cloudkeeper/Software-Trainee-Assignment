@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-5</title>
+  </head>
+  <body>
+    <div>Here is Array which there index</div>
+    <div id="dispayWriter"></div>
+    <form id="formData">
+      <label for="indexInput">Enter index to insert value:</label>
+      <input type="number" id="indexInput" name="indexInput" />
+      <label for="valueInput">Enter the Value that you insert</label>
+      <input type="number" id="valueInput" name="valueInput" />
+      <button type="button" onclick="insertAtIndex()">Insert Value</button>
+    </form>
+    <script>
+      let arr = ["a", "b", "c", "d", "e"];
+      let displayDiv = document.getElementById("dispayWriter");
+
+      for (let i = 0; i < arr.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = `Element at index ${i} is: ${arr[i]}`;
+        displayDiv.appendChild(p);
+      }
+
+      function insertAtIndex() {
+        let index = parseInt(
+          document.getElementById("indexInput").value,
+          10
+        );
+        let value = document.getElementById("valueInput").value;
+
+        if (index >= 0 && index <= arr.length) {
+          arr.splice(index, 0, value);
+          displayDiv.innerHTML = "";
+
+          for (let i = 0; i < arr.length; i++) {
+            let p = document.createElement("p");
+            p.textContent = `Element at index ${i} is: ${arr[i]}`;
+            displayDiv.appendChild(p);
+          }
+        } else {
+          alert("Index out of bounds");
+        }
+      }
+    </script>
+  </body>
+</html>
