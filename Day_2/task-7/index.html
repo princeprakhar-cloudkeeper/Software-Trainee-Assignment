@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7</title>
+</head>
+<body>
+    <div id="outputWriter"></div>
+
+    <button onclick="sortTheArray()">Submit</button>
+
+    <script>
+        const outputWriter = document.getElementById("outputWriter");
+        const arr = [1, 2, 4, 235, 5,243, 6];
+
+        outputWriter.innerHTML = `<h1>Here is the array: [${arr}]</h1>`;
+        
+        function sortTheArray() {
+            const n = arr.length;
+            for (let i = 0; i < n - 1; i++) {
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            outputWriter.innerHTML = `<h1>Sorted array: [${arr}]</h1>`;
+        }
+    </script>
+</body>
+</html>
