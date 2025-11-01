@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Index Without indexOf()</title>
+</head>
+<body>
+    <div id="outputWriter"></div>
+
+    <input type="number" id="searchValue" placeholder="Enter number to find">
+    <button onclick="findIndex()">Find Index</button>
+
+    <script>
+        const outputWriter = document.getElementById("outputWriter");
+        const arr = [10, 20, 30, 40, 50, 60];
+
+        outputWriter.innerHTML = `<h2>Array: [${arr}]</h2>`;
+
+        function findIndex() {
+            const num = Number(document.getElementById("searchValue").value);
+            let index = -1; 
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === num) {
+                    index = i;
+                    break; 
+                }
+            }
+
+            if (index !== -1) {
+                outputWriter.innerHTML = `<h2>Array: [${arr}]</h2><p>Number ${num} found at index: ${index}</p>`;
+            } else {
+                outputWriter.innerHTML = `<h2>Array: [${arr}]</h2><p>Number ${num} not found in the array.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
