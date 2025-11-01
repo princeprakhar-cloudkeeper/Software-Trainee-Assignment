@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Marks Table</title>
+</head>
+<body>
+
+  <h2>Student Marks Table</h2>
+  <button onclick="addStudent()">Add Student</button>
+  <br><br>
+
+  <table id="marksTable" border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Subject 1</th>
+        <th>Subject 2</th>
+        <th>Subject 3</th>
+        <th>Subject 4</th>
+        <th>Subject 5</th>
+        <th>Total Marks</th>
+        <th>Average Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    function addStudent() {
+      var studentName = prompt("Enter the student's name:");
+      if (!studentName) return;
+
+      var marks = [];
+      for (var i = 1; i <= 5; i++) {
+        var mark = prompt("Enter marks for Subject " + i + " (out of 100):");
+        if (mark === null) return;
+        mark = parseFloat(mark);
+        if (isNaN(mark) || mark < 0 || mark > 100) {
+          alert("Please enter a valid number between 0 and 100.");
+          i--; 
+          continue;
+        }
+        marks.push(mark);
+      }
+
+      var total = 0;
+      for (var j = 0; j < marks.length; j++) {
+        total += marks[j];
+      }
+      var avg = (total / marks.length).toFixed(2);
+
+      var tableBody = document.getElementById("marksTable").getElementsByTagName("tbody")[0];
+      var newRow = tableBody.insertRow();
+
+      var nameCell = newRow.insertCell();
+      nameCell.textContent = studentName;
+
+      for (var k = 0; k < marks.length; k++) {
+        var cell = newRow.insertCell();
+        cell.textContent = marks[k];
+      }
+
+      var totalCell = newRow.insertCell();
+      totalCell.textContent = total;
+
+      var avgCell = newRow.insertCell();
+      avgCell.textContent = avg;
+    }
+  </script>
+
+</body>
+</html>
