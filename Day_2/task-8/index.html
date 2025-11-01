@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array (No reverse function)</title>
+</head>
+<body>
+    <div id="outputWriter"></div>
+
+    <button onclick="reverseArray()">Reverse</button>
+
+    <script>
+        const outputWriter = document.getElementById("outputWriter");
+        const arr = [1, 2, 3, 4, 5, 6];
+
+        outputWriter.innerHTML = `<h1>Original array: [${arr}]</h1>`;
+
+        function reverseArray() {
+            let n = arr.length;
+
+            for (let i = 0; i < n / 2; i++) {
+                let temp = arr[i];
+                arr[i] = arr[n - 1 - i];
+                arr[n - 1 - i] = temp;
+            }
+
+            outputWriter.innerHTML = `<h1>Reversed array: [${arr}]</h1>`;
+        }
+    </script>
+</body>
+</html>
