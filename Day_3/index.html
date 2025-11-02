@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product List Assignment (ES5)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    #app {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 180px;
+      padding: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      border-color: #007bff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: green;
+      margin-bottom: 5px;
+    }
+
+    .category {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+  (function() {
+
+    // defining the constructor
+    function Product(name, price, category) {
+      this.name = name;
+      this.price = price;
+      this.category = category;
+    }
+
+    //add a member method for the product
+    Product.prototype.getDiscountedPrice = function(percent) {
+      return this.price - (this.price * percent / 100);
+    };
+    var products = [
+      new Product("Laptop", 1200, "Electronics"),
+      new Product("Shoes", 80, "Fashion"),
+      new Product("Watch", 250, "Accessories"),
+      new Product("Headphones", 150, "Electronics")
+    ];//defining the list of array
+
+    var prices = products.map(function(p) { return p.price; });// map prices in single arrray.
+    var maxPrice = Math.max.apply(null, prices);// use apply since product is array.
+
+    var costliest = products.filter(function(p) {
+      return p.price === maxPrice;
+    })[0];
+
+    var app = document.getElementById("app");
+
+    var header = document.createElement("div");
+    header.className = "header";
+    var getPriceText = function() {
+      return "Price of costliest product is $" + this.price;
+    };
+    header.textContent = getPriceText.call(costliest);
+    app.appendChild(header);
+
+    var container = document.createElement("div");
+    container.className = "product-container";
+    app.appendChild(container);
+
+    products.forEach(function(p) {
+      var card = document.createElement("div");
+      card.className = "card";
+
+      var name = document.createElement("div");
+      name.className = "name";
+      name.textContent = p.name;
+
+      var price = document.createElement("div");
+      price.className = "price";
+      price.textContent = "Price: $" + p.price;
+
+      var category = document.createElement("div");
+      category.className = "category";
+      category.textContent = "Category: " + p.category;
+
+      card.addEventListener("mouseover", function() {
+        card.style.backgroundColor = "#e6f0ff";
+      });
+      card.addEventListener("mouseout", function() {
+        card.style.backgroundColor = "white";
+      });
+
+      card.appendChild(name);
+      card.appendChild(price);
+      card.appendChild(category);
+
+      container.appendChild(card);
+    });
+
+    var showDiscount = function(percent) {
+      console.log("Discounted price of " + this.name + " is $" + this.getDiscountedPrice(percent));
+    };
+
+    var boundDiscount = showDiscount.bind(products[0], 10);
+
+  })(); 
+  </script>
+</body>
+</html>
