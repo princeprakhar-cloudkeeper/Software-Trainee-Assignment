@@ -28,6 +28,11 @@
   </table>
 
   <script>
+    window.onload = function() {
+      let storedStudents = JSON.parse(localStorage.getItem("students") || "[]");
+      storedStudents.forEach(student => addStudentToTable(student));
+    }
+
     function addStudent() {
       var studentName = prompt("Enter the student's name:");
       if (!studentName) return;
@@ -45,28 +50,40 @@
         marks.push(mark);
       }
 
-      var total = 0;
-      for (var j = 0; j < marks.length; j++) {
-        total += marks[j];
-      }
+      var total = marks.reduce((a, b) => a + b, 0);
       var avg = (total / marks.length).toFixed(2);
 
+      var student = {
+        name: studentName,
+        marks: marks,
+        total: total,
+        avg: avg
+      };
+
+      addStudentToTable(student);
+
+      let students = JSON.parse(localStorage.getItem("students") || "[]");
+      students.push(student);
+      localStorage.setItem("students", JSON.stringify(students));
+    }
+
+    function addStudentToTable(student) {
       var tableBody = document.getElementById("marksTable").getElementsByTagName("tbody")[0];
       var newRow = tableBody.insertRow();
 
       var nameCell = newRow.insertCell();
-      nameCell.textContent = studentName;
+      nameCell.textContent = student.name;
 
-      for (var k = 0; k < marks.length; k++) {
+      student.marks.forEach(mark => {
         var cell = newRow.insertCell();
-        cell.textContent = marks[k];
-      }
+        cell.textContent = mark;
+      });
 
       var totalCell = newRow.insertCell();
-      totalCell.textContent = total;
+      totalCell.textContent = student.total;
 
       var avgCell = newRow.insertCell();
-      avgCell.textContent = avg;
+      avgCell.textContent = student.avg;
     }
   </script>
 
