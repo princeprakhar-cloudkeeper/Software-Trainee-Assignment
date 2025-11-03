@@ -10,20 +10,28 @@ body {
 .header-container {
   background: #F5F7FA;
 }
-
-.header-centered-container {
+.header-container .header-centered-container {
   width: 80vw;
   margin: 0 auto;
 }
-
-.nav-list {
+.header-container .header-centered-container .nav-list {
   list-style: none;
   display: flex;
   gap: 50px;
 }
-.nav-list a {
+.header-container .header-centered-container .nav-list a {
   text-decoration: none;
   color: #18191F;
+}
+
+.header-section {
+  padding: 22px 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .button {
@@ -34,25 +42,13 @@ body {
   cursor: pointer;
   border-radius: 6px;
 }
-
-.primary-button {
+.button.primary-button {
   background: #4CAF4F;
   color: #fff;
 }
-
-.secondary-button {
+.button.secondary-button {
   background: transparent;
   color: #4CAF4F;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-section {
-  padding: 22px 0;
 }
 
 .heading-1 {
@@ -69,22 +65,24 @@ body {
   color: #717171;
 }
 
-.care-desc {
-  width: 630px;
-  margin: 0 auto;
-  margin-top: 16px;
-}
-
 .care-container {
   padding-top: 48px;
 }
-
-.care-image-container {
+.care-container .care-desc {
+  width: 630px;
+  margin: 16px auto 0;
+}
+.care-container .care-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+.care-container .care-image-wrapper .care-image-container {
   position: relative;
   width: 368px;
 }
-
-.care-text {
+.care-container .care-image-wrapper .care-image-container .care-text {
   position: absolute;
   background: #F5F7FA;
   width: 80%;
@@ -97,13 +95,6 @@ body {
   box-sizing: border-box;
 }
 
-.care-image-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 50px 0px;
-}
-
 .client {
   height: 190px;
   width: 80vh;
@@ -113,39 +104,32 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.c-header {
+.client .c-header {
   height: 76px;
   width: 1110px;
 }
-
-.client-header {
+.client .client-header {
   font-size: 36px;
   font-weight: 500;
   row-gap: 8px;
   justify-self: center;
   color: #4d4d4d;
 }
-
-.client-subheader {
+.client .client-subheader {
   font-size: 16px;
   color: #717171;
   margin-top: 12px;
-  color: #717171;
   text-align: center;
 }
-
-.client-logos {
+.client .client-logos {
   width: 1152px;
   height: 98px;
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-between;
   padding-top: 32px;
 }
-
-.client-logo {
+.client .client-logos .client-logo {
   width: 41px;
   height: 27px;
 }
@@ -159,15 +143,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.centered-container {
+.who-we-are-section .centered-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-
-.community-header {
+.who-we-are-section .centered-container .community-header {
   font-size: 36px;
   width: 542px;
   height: 88px;
@@ -177,8 +159,7 @@ body {
   text-align: center;
   color: #4d4d4d;
 }
-
-.community-suitable {
+.who-we-are-section .centered-container .community-suitable {
   height: 24px;
   font-size: 16px;
   display: flex;
@@ -186,19 +167,15 @@ body {
   justify-content: center;
   color: #717171;
 }
-
-.card-items {
+.who-we-are-section .centered-container .card-items {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 24px;
   padding-top: 48px;
-  justify-content: space-evenly;
 }
 
-/* Card styling */
-/* Container (if multiple cards) */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -207,9 +184,7 @@ body {
   gap: 24px;
   padding: 16px;
 }
-
-/* Individual card */
-.card {
+.cards-container .card {
   width: 300px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -222,36 +197,27 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
 }
-
-/* Icon section */
-.card-icon {
+.cards-container .card .card-icon {
   width: 64px;
   height: 64px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 28px;
 }
-
-/* Image styling */
-.card-img {
+.cards-container .card .card-img {
   width: 100%;
   height: auto;
   margin-bottom: 30px;
   object-fit: contain;
 }
-
-/* Title */
-.card-title {
+.cards-container .card .card-title {
   font-size: 28px;
   font-weight: 700;
   color: #4D4D4D;
   margin-bottom: 12px;
 }
-
-/* Description */
-.card-desc {
+.cards-container .card .card-desc {
   font-size: 16px;
   color: #666;
   margin-top: 20px;
