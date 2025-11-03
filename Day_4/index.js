@@ -205,9 +205,23 @@ console.log(obj.b.c);
 // Write a function flattenArray that takes a nested array and returns a flattened array. Use recursion and/or ES6 methods to solve this problem.
 // Example:
 // flattenArray([1, [2, [3, [4, 5]]]]); // Output: [1, 2, 3, 4, 5]
+
+
 const flattenArray = (arr) => {
-    return arr.flat(Infinity);  // Using flat() method with Infinity depth
+    let result = [];
+    
+    arr.forEach(item => {
+        if (Array.isArray(item)) {
+            result = result.concat(flattenArray(item));
+        } else {
+            result.push(item);
+        }
+    });
+    
+    return result;
 };
+
 console.log("\nQestion 13 output: ");
 console.log(flattenArray([1, [2, [3, [4, 5]]]]));
+
 
